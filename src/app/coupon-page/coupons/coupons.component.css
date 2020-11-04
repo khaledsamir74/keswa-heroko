@@ -1,0 +1,14 @@
+#search-input {
+    float: left;
+}
+#addUserBtn {
+    padding: 10px;
+    float: right;
+}
+fieldset {
+    border-style: dashed;
+}
+.container {
+    border-style: double;
+    padding-top: 10px;
+}

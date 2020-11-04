@@ -1,0 +1,146 @@
+<div class="container">
+    <h1 class="headTxt">Customer Data</h1>
+    <div class="btns">
+        <div class="commentBtn">
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="success" outline="true" mdbWavesEffect>Comment</button>
+        </div>
+        <div class="statusBtns">
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="black" outline="true" mdbWavesEffect>Approvr</button>
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="black" outline="true" mdbWavesEffect>Confirm</button>
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="black" outline="true" mdbWavesEffect>Shipped</button>
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="black" outline="true" mdbWavesEffect>Delivered</button>
+        </div>
+        <div class="editBtns">
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="danger" outline="true" mdbWavesEffect>Cancel</button>
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="danger" outline="true" mdbWavesEffect>Reject</button>
+        </div>
+        <div class="finalBtns">
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="black" outline="true" mdbWavesEffect>Save</button>
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="black" outline="true" mdbWavesEffect>Back</button>
+        </div>
+        <div class="delBtn">
+            <button mdbBtn class="headBtns" rounded="true" type="button" color="danger" outline="true" mdbWavesEffect>Delete</button>
+        </div>
+    </div>
+    <div class="data">
+        <div class="row1">
+            <input class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="ID" disabled ngModel="">
+            <input class="sInput dataEntry col-12 col-mid-6 col-lg-2" color="primary" data-toggle="modal" data-target="#basicExample"
+                (click)="frame.show()" mdbWavesEffect placeholder="Search customer">
+            <input class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="Customer Name" disabled ngModel="">
+            <input class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="Phone Number" disabled ngModel="">
+        </div>
+        <div class="row2">
+            <select #discType class="dataEntry col-12 col-mid-6 col-lg-2">
+            <option value=""></option>
+          </select>
+          <select #discType class="dataEntry col-12 col-mid-6 col-lg-2">
+            <option value=""></option>
+          </select>
+          <select #discType class="dataEntry col-12 col-mid-6 col-lg-2">
+            <option value=""></option>
+          </select>
+            <input class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="Post Code" disabled ngModel="">
+        </div>
+        <div class="row3">
+            <input class="dataEntry col-11 col-mid-11 col-lg-11" placeholder="Shipping Address" disabled ngModel="">
+        </div>
+    </div>
+</div>
+<!--***************************************************************-->
+<div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" (open)="onOpen($event)">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Serach customer</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+          <div class="table-responsive">
+            <div class="row col-12">
+              <div class="col-md-6 mx-auto">
+                <div class="md-form">
+                  <input rounded="true" type="text" placeholder="Search" class="form-control" [(ngModel)]="searchText"
+                    (keyup)="searchItems()" id="search-input" mdbInput>
+                </div>
+              </div>
+              
+              <table mdbTable #tableEl="mdbTable" stickyHeader="true" hover="true" striped="true" class="z-depth-1">
+                <thead class="sticky-top">
+                  <tr>
+                    <th class="tableTxt" *ngFor="let head of headElements; let i = index" [mdbTableSort]="elements"
+                      [sortBy]="headElements[i]" scope="col">{{head | titlecase}} <mdb-icon fas icon="sort"></mdb-icon>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody #row>
+                  <tr mdbTableCol (rowCreated)="onRowCreate($event)" (rowRemoved)="onRowRemove($event)"
+                    *ngFor="let el of elements; let i = index">
+                    <th class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
+                      <button mdbBtn size="sm" type="button" color="success" outline="true" (click)="onEditBtn(el.ID)"
+                      mdbWavesEffect>Select</button> 
+                    </th>
+                    <th class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
+                      {{el.ID}}</th>
+                    <th class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
+                      {{el.Data}}</th>
+                    <td class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.TotalEGP}}
+                    </td>
+                    <td class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.CustomerName}}
+                    </td>
+                    <td class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Number}}
+                    </td>
+                    <td class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Govern}}
+                    </td>
+                    <td class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Carrier}}
+                    </td>
+                    <td class="tableTxt"
+                      *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Status}}
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot class="grey lighten-5 w-100">
+                  <tr>
+                    <td colspan="4">
+                      <mdb-table-pagination [tableEl]="tableEl" class="pagen" paginationAlign="" [searchDataSource]="elements">
+                      </mdb-table-pagination>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Get it now
+          <mdb-icon far icon="gem" class="ml-1"></mdb-icon>
+        </a>
+        <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect (click)="frame.hide()"
+          data-dismiss="modal">No, thanks</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--********************************************************************************-->

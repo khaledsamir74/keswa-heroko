@@ -1,0 +1,37 @@
+<div class="Total">
+  <div class="row">
+    <h1 class="headTxt">User Coupon</h1>
+    <div class="buttons">
+      <button type="button" rounded="true" class="headBtns" mdbBtn color="light" (click)="onSaveBtn()"
+        mdbWavesEffect>Save</button>
+      <button type="button" rounded="true" class="headBtns" mdbBtn color="light" (click)="onBackBtn()"
+        mdbWavesEffect>Back</button>
+    </div>
+    <div class="data">
+      <input class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="ID" disabled ngModel="{{cutChild[0]}}">
+      <input #ID class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="User ID" disabled ngModel="{{cutChild[1]}}">
+      <select #couponType (change)="onCouponTypeChanged()" class="dataEntry col-12 col-mid-6 col-lg-2">
+        <option> select Coupon Type</option>
+        <option *ngFor="let i of typeC" value="{{i.refCode}}"
+          [attr.selected]="i.refCode==edited.couponTypeCode?true:null">{{i.refDescEn}}</option>
+      </select>
+      <input #couponCode [disabled]="couponCodeDisabled?true :null" class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="Coupon Code"
+        [(ngModel)]="edited.couponCode">
+      <input #desc placeholder="Description" class="dataEntry col-12 col-mid-6 col-lg-5" name="description" [(ngModel)]="edited.couponDesc">
+      <input #discountValue class="dataEntry col-12 col-mid-6 col-lg-2" placeholder="Discount value" [(ngModel)]="edited.discountValue">
+      <select #discType class="dataEntry col-12 col-mid-6 col-lg-2">
+        <option *ngFor="let i of typeD" value="{{i.refCode}}"
+          [attr.selected]="i.refCode==edited.discountTypeCode?true:null">{{i.refDescEn}}</option>
+      </select>
+      <div class="sel col-12 col-mid-6 col-lg-3">
+      start date<input #startdate type="date" id="birthday" name="Start date" class="selectData"
+        [(ngModel)]="convertedStartDate">
+      </div>
+      <div class="sel col-12 col-mid-6 col-lg-3">
+      End date<input #enddate type="date" id="birthday" name="End date"  class="selectData"
+        [(ngModel)]="convertedEndDate">
+      <input type="checkbox" disabled [checked]="edited.consumed? true: null">Used
+    </div>
+    </div>
+  </div>
+</div>

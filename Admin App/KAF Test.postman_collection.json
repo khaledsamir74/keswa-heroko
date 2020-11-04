@@ -1,0 +1,864 @@
+{
+	"info": {
+		"_postman_id": "6cd532d0-d191-46c6-bb99-e1919f4d11b0",
+		"name": "KAF Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userProfile",
+			"item": [
+				{
+					"name": "userProfile/getUserProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/getUserProfile?userProfileId=2",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"getUserProfile"
+							],
+							"query": [
+								{
+									"key": "userProfileId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/getAllUserProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/getAllUserProfile",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"getAllUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postNewUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userId\": \"RahmaHassan44\",\r\n        \"userName\": \"Rahma Hassan Hussien\",\r\n        \"email\": \"BanotaCute44@gmail.com\",\r\n        \"phoneNumber\": \"01226486547\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postNewUser",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postNewUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postEditUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userProfileId\": 9,\r\n        \"userId\": \"RahmaHassan55\",\r\n        \"birthDate\": \"23/07/1985\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postEditUser",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postEditUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/deleteUser?userProfileId=10",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"deleteUser"
+							],
+							"query": [
+								{
+									"key": "userProfileId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postLoginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userId\": \"RahmaHassan55\",\r\n        \"userPass\": \"a12345\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postLoginUser",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postLoginUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postResetUserPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userProfileId\": 9\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postResetUserPassword",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postResetUserPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postActivateUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userProfileId\": 9\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postActivateUser",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postActivateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/getUserShippingAddress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/getUserShippingAddress?userShippingAddressId=1",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"getUserShippingAddress"
+							],
+							"query": [
+								{
+									"key": "userShippingAddressId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/getAllUserShippingAddress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/getAllUserShippingAddress?userProfileId=2",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"getAllUserShippingAddress"
+							],
+							"query": [
+								{
+									"key": "userProfileId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postNewUserShippingAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userProfileId\": \"1\",\r\n        \"countryCode\": \"EGY\",\r\n        \"governorateCode\": \"CAI\",\r\n        \"cityCode\": \"DIST3\",\r\n        \"shippingAddress\": \"القاهرة - التجمع الثالث - عمارات المهندسين - عماره 3 شقة 22\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postNewUserShippingAddress",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postNewUserShippingAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postEditUserShippingAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userShippingAddressId\": 3,\r\n        \"shippingAddress\": \"القاهرة - التجمع الثالث - عمارات المهندسين - عماره 3 شقة 23\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postEditUserShippingAddress",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postEditUserShippingAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/deleteUserShippingAddress",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/deleteUserShippingAddress?userShippingAddressId=3",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"deleteUserShippingAddress"
+							],
+							"query": [
+								{
+									"key": "userShippingAddressId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postSetDefaultUserShippingAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userShippingAddressId\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postSetDefaultUserShippingAddress",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postSetDefaultUserShippingAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postActivateUserShippingAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userShippingAddressId\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postActivateUserShippingAddress",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postActivateUserShippingAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/getUserCoupon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/getUserCoupon?userCouponId=1",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"getUserCoupon"
+							],
+							"query": [
+								{
+									"key": "userCouponId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/getAllUserCoupon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/getAllUserCoupon?userProfileId=2",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"getAllUserCoupon"
+							],
+							"query": [
+								{
+									"key": "userProfileId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postNewUserCoupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userProfileId\": 3,\r\n        \"couponTypeCode\": \"REG\",\r\n        \"couponCode\": \"REG610202\",\r\n        \"couponDesc\": \"خصم 10% في اول اوردر من كسوة على كل المشتريات عند تسجيل الدخول في الابليكشن\",\r\n        \"discountValue\": 10.0,\r\n        \"discountTypeCode\": \"PERCENT\",\r\n        \"startDate\": \"06/10/2020\",\r\n        \"endDate\": \"06/10/2030\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postNewUserCoupon",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postNewUserCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postEditUserCoupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userCouponId\": 2,\r\n        \"startDate\": \"06/10/2020\",\r\n        \"endDate\": \"06/10/2035\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postEditUserCoupon",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postEditUserCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/deleteUserCoupon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/deleteUserCoupon?userCouponId=2",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"deleteUserCoupon"
+							],
+							"query": [
+								{
+									"key": "userCouponId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile/postActivateUserCoupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestUserId\": \"1\",\r\n    \"requestData\": {\r\n        \"userCouponId\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/kaftech-keswa-api-test/userProfile/postActivateUserCoupon",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"kaftech-keswa-api-test",
+								"userProfile",
+								"postActivateUserCoupon"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ref",
+			"item": [
+				{
+					"name": "ref/getRefTypes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/keswa-api/ref/getRefTypes",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"keswa-api",
+								"ref",
+								"getRefTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref/getAllRefData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/keswa-api/ref/getAllRefData/RefProductSize?parentRefCode=2030",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"keswa-api",
+								"ref",
+								"getAllRefData",
+								"RefProductSize"
+							],
+							"query": [
+								{
+									"key": "parentRefCode",
+									"value": "2030"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref/getRefData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/keswa-api/ref/getRefData/RefUserType?refCode=USER",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"keswa-api",
+								"ref",
+								"getRefData",
+								"RefUserType"
+							],
+							"query": [
+								{
+									"key": "refCode",
+									"value": "USER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref/getRefDesc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://kaftech.org/keswa-api/ref/getRefDesc/RefUserType?refCode=USER",
+							"protocol": "http",
+							"host": [
+								"kaftech",
+								"org"
+							],
+							"path": [
+								"keswa-api",
+								"ref",
+								"getRefDesc",
+								"RefUserType"
+							],
+							"query": [
+								{
+									"key": "refCode",
+									"value": "USER"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "product/getProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://kaftech.org/kaftech-keswa-api-test/product/getProduct?shareURL=1473375&brand=SHEIN",
+					"protocol": "http",
+					"host": [
+						"kaftech",
+						"org"
+					],
+					"path": [
+						"kaftech-keswa-api-test",
+						"product",
+						"getProduct"
+					],
+					"query": [
+						{
+							"key": "shareURL",
+							"value": "1473375"
+						},
+						{
+							"key": "lang",
+							"value": "EN",
+							"disabled": true
+						},
+						{
+							"key": "brand",
+							"value": "SHEIN"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

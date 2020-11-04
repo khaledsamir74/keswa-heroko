@@ -1,0 +1,25 @@
+<div class="container">
+  
+    <h1 class="headTxt">User Shipping address</h1>
+    <div class="buttons">
+        <button type="button" rounded="true" class="headBtns" (click)="onSaveBtn()" mdbBtn color="light" mdbWavesEffect>Save</button>
+        <button type="button" rounded="true" class="headBtns" mdbBtn color="light" (click)="onBackBtn()" mdbWavesEffect>Back</button>
+    </div>
+    <div class="data">
+        <input class="dataEntry" placeholder="ID" disabled ngModel="{{cutChild[0]}}">
+        <input #ID class="dataEntry" placeholder="User ID" disabled ngModel="{{cutChild[1]}}">
+        <select #Country class="dataEntry" (change)="countryChanged()">
+            <option *ngFor="let i of country" value="{{i.refCode}}" [attr.selected]="i.refCode==edited.countryCode?true:null">{{i.refDescEn}}</option>
+          </select>
+          <select #Gov class="dataEntry" (change)="governorateChanged()" >
+            <option *ngFor="let i of governorate" value="{{i.refCode}}" [attr.selected]="i.refCode==edited.governorateCode?true:null">{{i.refDescEn}}</option>
+          </select>
+          <select #City class="dataEntry">
+            <option *ngFor="let i of city" value="{{i.refCode}}" [attr.selected]="i.refCode==edited.cityCode?true:null">{{i.refDescEn}}</option>
+          </select>
+          <input #postcode class="dataEntry" placeholder="postcode">
+          <input #address class="dataEntry" placeholder="shipping address" [(ngModel)]="edited.shippingAddress">
+
+    </div>
+</div>
+

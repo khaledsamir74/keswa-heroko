@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center loadingSpin" *ngIf="loading">
+  <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="container" [hidden]="loading">
+  <div class="row col-12">
+    <h1 class="headTxt">Users</h1>
+    <div class="table-responsive">
+      <div class="row col-12">
+        <div class="col-md-6 mx-auto">
+          <div class="md-form">
+            <input rounded="true" type="text" placeholder="Search" class="form-control" [(ngModel)]="searchText"
+              (keyup)="searchItems()" id="search-input" mdbInput>
+          </div>
+        </div>
+        <button mdbBtn type="button" color="success" rounded="true" id="addUserBtn" (click)="addNewUser()"
+          mdbWavesEffect>Add user</button>
+        <table mdbTable #tableEl="mdbTable" stickyHeader="true" hover="true" striped="true" class="z-depth-1">
+          <thead class="sticky-top">
+            <tr>
+              <th class="tableTxt" *ngFor="let head of headElements; let i = index" [mdbTableSort]="elements"
+                [sortBy]="headElements[i]" scope="col">{{head | titlecase}} <mdb-icon fas icon="sort"></mdb-icon>
+              </th>
+            </tr>
+          </thead>
+          <tbody #row>
+            <tr mdbTableCol (rowCreated)="onRowCreate($event)" (rowRemoved)="onRowRemove($event)"
+              *ngFor="let el of elements; let i = index">
+              <th class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
+                {{el.ID}}</th>
+              <th class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
+                {{el.UserID}}</th>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Name}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Gender}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Number}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Type}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                <button mdbBtn size="sm" type="button" color="success" outline="true" (click)="onEditBtn(el.ID)"
+                  mdbWavesEffect>Edit</button>
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                <button mdbBtn size="sm" *ngIf="!el.Status" [disabled]="el.admin?true:null" type="button"
+                  color="success" (click)="onActivateBtn(el)" mdbWavesEffect>Activate</button>
+                <button mdbBtn size="sm" *ngIf="el.Status" [disabled]="el.admin?true:null" type="button" color="danger"
+                  (click)="onDeActivateBtn(el)" mdbWavesEffect>DeActivate</button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot class="grey lighten-5 w-100">
+            <tr>
+              <td colspan="4">
+                <mdb-table-pagination [tableEl]="tableEl" class="pagen" paginationAlign="" [searchDataSource]="elements">
+                </mdb-table-pagination>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

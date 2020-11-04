@@ -1,0 +1,79 @@
+<div class="col-md-12 mx-auto d-flex justify-content-center flex-wrap" *ngIf="noData">
+  <h1>This User have no shipping address</h1>
+  <button mdbBtn type="button" color="success"id="addUserBtn" mdbWavesEffect
+  (click)="onAddBtn()">Add</button>
+</div>
+<div class="container" [hidden]="noData">
+  <div class="row col-12">
+    <h1 class="headTxt">User coupons</h1>
+    <div class="table-responsive">
+      <div class="row col-12">
+        <div class="col-md-6 mx-auto">
+          <div class="md-form">
+            <input type="text" placeholder="Search" class="form-control" [(ngModel)]="searchText"
+              (keyup)="searchItems()" id="search-input" mdbInput>
+          </div>
+        </div>
+        <button mdbBtn type="button" color="success" rounded="true" id="addUserBtn" (click)="onAddBtn()"
+          mdbWavesEffect>Add</button>
+        <table mdbTable #tableEl="mdbTable" stickyHeader="true" hover="true" striped="true" class="z-depth-1">
+          <thead class="sticky-top">
+            <tr>
+              <th class="tableTxt" *ngFor="let head of headElements; let i = index" [mdbTableSort]="elements"
+                [sortBy]="headElements[i]" scope="col">{{head | titlecase}} <mdb-icon fas icon="sort"></mdb-icon>
+              </th>
+            </tr>
+          </thead>
+          <tbody #row>
+            <tr mdbTableCol (rowCreated)="onRowCreate($event)" (rowRemoved)="onRowRemove($event)"
+              *ngFor="let el of elements; let i = index">
+              <th class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
+                {{el.id}}</th>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Type}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Code}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Desc}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                {{el.DiscountValue}}</td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                {{el.DiscountType}}</td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.EndDate}}
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                <input type="checkbox" [checked]="el.Used" disabled (click)="onUsedClick(el)">
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                <button size="sm" mdbBtn type="button" color="success" outline="true" (click)="onEditBtn(el.id)"
+                  mdbWavesEffect>Edit</button>
+              </td>
+              <td class="tableTxt"
+                *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                <button size="sm" mdbBtn type="button" color="danger" outline="true" (click)="onDeletetn(el.id, i+1)"
+                  mdbWavesEffect>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot class="grey lighten-5 w-100">
+            <tr>
+              <td colspan="4">
+                <mdb-table-pagination [tableEl]="tableEl" class="pagen" paginationAlign=""
+                  [searchDataSource]="elements"></mdb-table-pagination>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

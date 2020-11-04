@@ -1,0 +1,20 @@
+<div class="Container">
+    <div *ngIf="usersSection" class="usersTable">
+        <app-users (sendData)="getData($event)"> </app-users>
+    </div>
+    <div *ngIf="sections[0]" class="editUserData"> 
+        <app-user-data [childMessage]='parentMsg' (sendBack)="getBack($event)"></app-user-data>
+    </div>
+    <div *ngIf="sections[1]" class="showUserShippingAdresses"> 
+        <app-show-user-shipping-adresses (sendShippingData)="getShippingData($event)" [childMessage]='parentMsg'></app-show-user-shipping-adresses>
+    </div>
+    <div *ngIf="sections[2]" class="showUserCoupons"> 
+        <app-show-user-coupons (sendCouponData)="getCouponData($event)" [childMessage]='parentMsg'></app-show-user-coupons>
+    </div>
+    <div *ngIf="sections[3]" class="editUserShippingAdress"> 
+        <app-edit-user-shipping-adress [childMessage]='parentMsg' [childShipping]='parentShipping' (sendShippingBack)="getshippingBack($event)"></app-edit-user-shipping-adress>
+    </div>
+    <div *ngIf="sections[4]" class="editUserCoupon"> 
+        <app-edit-user-coupon  [childMessage]='parentMsg' [childCoupon]='parentCoupon' (sendCouponBack)="getCouponBack($event)"></app-edit-user-coupon>
+    </div>
+</div>

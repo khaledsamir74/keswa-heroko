@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
+    <img src="./assets/PP.png" width="50px"
+      class="img-fluid rounded-circle z-depth-0"></a>
+  <a class="navbar-brand" href="">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Orders
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="CustomerOrders">Customer Orders</a>
+          <a class="dropdown-item" href="supplyOrders">Supply Orders</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="users">Users</a>
+          <a class="dropdown-item" href="users">Suppliers</a>
+          <a class="dropdown-item" href="users">Carriers</a>
+          <a class="dropdown-item" href="users">Shipping Cost</a>
+          <a class="dropdown-item" href="users">General Config</a>
+          <a class="dropdown-item" href="users">Price Config</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="brands">Brands</a>
+          <a class="dropdown-item" href="coupons">Coupons</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <!--******************************************************************-->
+        <a class="nav-link" data-toggle="modal" data-target="#basicExample" (click)="frame.show()" href=""
+          mdbWavesEffect>Help</a>
+        <div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true" (open)="onOpen($event)">
+          <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
+              <!--Header-->
+              <div class="modal-header">
+                <p class="heading lead">Keswa</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+
+              <!--Body-->
+              <div class="Help">
+                <div class="col-md-12">
+                  <mdb-card class="testimonial-card">
+                    <div class="avatar mx-auto">
+                      <img src="./assets/PP.png" class="rounded-circle">
+                    </div>
+                    <mdb-card-body>
+                      <mdb-card-title>
+                        <h4>Keswa Admin App</h4>
+                      </mdb-card-title>
+                      <h4>Version : 1.0 - 8/8/2020 06:05</h4>
+                      <h4>(c) 2020</h4>
+                      <h4>Support contact</h4>
+                      <h4>Phone :</h4>
+                      <h4>WA :</h4>
+                      <h4>Email :</h4>
+                    </mdb-card-body>
+                  </mdb-card>
+                </div>
+              </div>
+              <!--Footer-->
+              <div class="modal-footer justify-content-center">
+                <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect
+                  (click)="frame.hide()" data-dismiss="modal">Backs</a>
+              </div>
+            </div>
+            <!--/.Content-->
+          </div>
+        </div>
+        <!--******************************************************************-->
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="onLogout()" type="submit">Logout</button>
+    </form>
+  </div>
+</nav>

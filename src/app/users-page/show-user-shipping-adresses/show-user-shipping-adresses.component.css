@@ -1,0 +1,99 @@
+#search-input {
+    float: left;
+}
+#addUserBtn {
+    padding: 10px;
+    float: right;
+}
+.container {
+    border-style: double;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+.tableTxt{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    padding:2px ;
+}
+.loadingSpin {
+    margin-bottom: 10px;
+}
+.headTxt {
+    position: absolute;
+    background-color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    top: -10%;
+    left: 1%;
+    font-size: 20px;
+}
+.pagen{
+    font-size: 17px;
+}
+@media (max-width: 1200px) {
+    .headTxt{
+        top: -7%;
+    }
+    .data{
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .headTxt{
+        top: -6%;
+    }
+    .headBtns{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .data{
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headTxt{
+        font-size: 20px;
+        top: -5%;
+    }
+    .headBtns{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .data{
+        padding-top: 30px;
+        flex-direction: column;
+    }
+    .container{
+        width: 650px;
+    }
+    .pagen{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 544px) {
+    .headTxt{
+        top: -5%;
+        font-size: 15px;
+    }
+    .headBtns{
+        font-size: 10px;
+        padding: 5px;
+    }
+    .data{
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+    }
+    .container{
+        width: 350px;
+    }
+    .pagen{
+        font-size: 10px;
+    }
+}

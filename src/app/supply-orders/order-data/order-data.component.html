@@ -1,0 +1,57 @@
+<div class="container">
+    <fieldset>
+        <legend>Order Data:</legend>
+        <div class="buttons">
+            <button type="button" mdbBtn class="btns" color="primary" mdbWavesEffect>Comment</button>
+            <button type="button" mdbBtn class="btns" color="light" mdbWavesEffect>Submitted</button>
+            <button type="button" mdbBtn class="btns" color="light" mdbWavesEffect>Recieved</button>
+            <button type="button" mdbBtn class="btns" color="light" mdbWavesEffect>Shipped</button>
+            <button type="button" mdbBtn class="btns" color="light" mdbWavesEffect>Supplied</button>
+            <button type="button" mdbBtn class="btns" color="danger" mdbWavesEffect>Cancel 1</button>
+            <button type="button" mdbBtn class="btns" color="danger" mdbWavesEffect>Cancel 2</button>
+            <button type="button" mdbBtn class="btns" color="light" mdbWavesEffect>Save</button>
+            <button type="button" mdbBtn class="btns" color="light" mdbWavesEffect>Back</button>
+            <button type="button" mdbBtn class="btns" color="danger" mdbWavesEffect>Delete</button>
+        </div>
+        <div class="data">
+            <input class="dataEntry" placeholder="ID" disabled>
+            <select class="dataEntry">
+                <option> Select Brand</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <input class="dataEntry" placeholder="Order Code">
+            <!-- **************************************************************************************-->
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary dataEntry" data-toggle="modal" data-target="#basicExampleModal">
+    Search Supplier
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Suppliers</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-supply-orders-table (sendData)="getData($event)"></app-supply-orders-table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+            <!-- **************************************************************************************-->
+            <input class="dataEntry" placeholder="Supplier Name">
+            <input class="dataEntry" placeholder="Supplier Number">
+        </div>
+    </fieldset>
+</div>

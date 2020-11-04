@@ -1,0 +1,31 @@
+    <div class="container">
+        <h1 class="headTxt">User data</h1>
+    <div class="buttons">
+        <button type="button" rounded="true" class="headBtns" mdbBtn *ngIf="!edited.active" color="success" (click)="onActivateBtn()" mdbWavesEffect>Activate</button>
+        <button type="button" rounded="true" class="headBtns" mdbBtn *ngIf="edited.active" color="danger" (click)="onDeActivateBtn()" mdbWavesEffect>DeActivate</button>
+        <button type="button" rounded="true" class="headBtns" mdbBtn  color="light" (click)="onSaveBtn()" mdbWavesEffect>Save</button>
+        <button type="button" rounded="true" class="headBtns" mdbBtn  color="light" (click)="onBackBtn()" mdbWavesEffect>Back</button>
+    </div>
+    <div class="data">
+        <div class="profileImage">
+            <img [src]="imgLink" class="profileImgviw">
+            <input type="file" accept="image/*" (change)="imageLoaded()" #pImage id="profileImgBtn" >
+        </div>
+        <div class="profileData">
+            <input class="dataEntry" #profileID id="profileID" placeholder="ID" disabled [(ngModel)]="edited.userProfileId">
+            <input class="dataEntry" #ID placeholder="User ID" [(ngModel)]="edited.userId">
+            <input class="dataEntry" #Name placeholder="User Name" [(ngModel)]="edited.userName">
+            <select class="dataEntry" #Type>
+                <option  *ngFor="let i of type" value="{{i.refCode}}" [attr.selected]="i.refCode==edited.userTypeCode?true:null">{{i.refDescEn}}</option>
+              </select>
+              <select class="dataEntry" #Gender>
+                <option *ngFor="let i of gender" value="{{i.refCode}}" [attr.selected]="i.refCode==edited.genderCode?true:null">{{i.refDescEn}}</option>
+              </select>
+            <input type="date" #birthday name="birthday" class="dataEntry" placeholder="dd/mm/yyyy" [(ngModel)]="convertedDate">
+              <input class="dataEntry" #phoneNumber placeholder="Phone number" [(ngModel)]="edited.phoneNumber">
+              <input class="dataEntry" #email placeholder="Email" type="email" [(ngModel)]="edited.email">
+              
+        </div>
+    </div>
+    
+</div>

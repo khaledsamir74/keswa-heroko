@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-style: double;
+    padding: 15px;
+    padding-top: 5%;
+    position: relative;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+.headBtns{
+    font-size: 11px;
+}
+.data{
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+}
+.profileImage {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    vertical-align: middle;
+}
+.profileImgviw {
+    width: 150px;
+    align-self: center;
+}
+.profileData {
+    display: block;
+    flex: 5;
+    align-self: center;
+    float: left;
+}
+.dataEntry{
+    width: 200px;
+    margin: 3%;
+    padding: 0.5%;
+    border-width:3px;
+    border-radius: 3%;
+    background-color: white;
+}
+
+.headTxt {
+    position: absolute;
+    background-color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    top: -5%;
+}
+@media (max-width: 1200px) {
+    .headTxt{
+        top: -7%;
+    }
+}
+
+@media (max-width: 992px) {
+    .headTxt{
+        top: -4%;
+    }
+    .headBtns{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .data{
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .headBtns{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .data{
+        padding-top: 30px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 544px) {
+    .headTxt{
+        top: -5%;
+    }
+    .headBtns{
+        font-size: 10px;
+        padding: 5px;
+    }
+    .data{
+        padding-top: 40px;
+        flex-direction: column;
+    }
+}
