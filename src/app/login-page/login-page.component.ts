@@ -28,6 +28,8 @@ import { Router } from '@angular/router';
     this.http.post("http://kaftech.org/kaftech-keswa-api-test/userProfile/postLoginUser", requestLogin)
         .subscribe(data => {
           var obj = JSON.parse(JSON.stringify(data));
+          console.log(obj);
+          
         if (obj.responseCode == "200") {
           localStorage.setItem('loggedInUser',JSON.stringify(obj.responseData));
           this.router.navigate(['']);

@@ -11,7 +11,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { CustomerDataComponent } from './customer-page/customer-data/customer-data.component';
 const routes: Routes = [
   { path : "" ,
-  component : CustomerDataComponent,
+  component : HomePageComponent,
 },
 { path : "users" ,
   component : UsersPageComponent,
